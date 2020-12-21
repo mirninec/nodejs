@@ -5,7 +5,7 @@
   "main": "app.js",
   "nodemonConfig": {
     "ignore": [
-      "/mnt/c/Users/win/Documents/nodejs/data/"
+      "/home/mir/Документы/nodejs/data/"
     ]
   },
   "scripts": {

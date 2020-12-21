@@ -9,7 +9,7 @@ class Product {
     }
 
     save() {
-        const p = path.join(
+            const p = path.join(
             path.dirname(process.mainModule.filename), 
             'data', 
             'products.json'

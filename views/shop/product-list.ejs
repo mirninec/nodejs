@@ -1,15 +1,7 @@
-<%- include('includes/head.ejs') %>
+<%- include('../includes/head.ejs') %>
 
 <body>
-    <header class="main-header">
-        <nav class="main-header__nav">
-            <ul class="main-header__item-list">
-                <li class="main-header__item"><a class="active" href="/">Shop</a></li>
-                <li class="main-header__item"><a href="/admin/add-product">Add Product</a></li>
-                <li class="main-header__item"><a href="/clear">Очистить корзину</a></li>
-            </ul>
-        </nav>
-    </header>
+<%- include('../includes/navigation.ejs') %>
 
     <main>
         <% if (prods.length> 0) { %>
@@ -39,4 +31,4 @@
             <img src="../images/girl.jpg" alt="girl">
     </main>
 
-<%- include('includes/end.ejs') %>
+<%- include('../includes/end.ejs') %>

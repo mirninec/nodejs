@@ -1,9 +1,9 @@
 const Product = require('../models/product').товар;
-const products = require('../models/product').products;
+const products = [];
 const fs = require('fs');
 
 exports.getAddProduct = (req, res, next) => {
-    res.render('add-product', {
+    res.render('admin/add-product', {
         pageTitle: 'Добавить продукт',
         path: '/admin/add-product'
     });
@@ -19,7 +19,7 @@ exports.postAddProduct = (req, res, next) => {
 exports.getProducts = (req, res, next) => {
     Product.fetchAll(products => {
         console.log(products)
-        res.render('shop', {
+        res.render('shop/product-list', {
             prods: products,
             pageTitle: 'Ваши товары',
             path: '/',
@@ -31,8 +31,34 @@ exports.getProducts = (req, res, next) => {
 }
 
 exports.clearPoducts = (req, res, next) => {
-
     console.log('Очищаем корзину');
     Product.clear();
     res.redirect('/');
+}
+
+exports.getCart = (req, res, next) => {
+    res.render('shop/cart', {
+        pageTitle: 'Корзина',
+        path: '/cart'
+    })
+}
+
+exports.getAdminProducts = (req, res, next) => {
+    res.render('admin/products', {
+        pageTitle: 'Товары',
+        path: '/admin/products'
+    })
+}
+
+exports.getProductsList = (req, res, next) => {
+    Product.fetchAll(products => {
+        console.log(products)
+        res.render('shop/product-list', {
+            prods: products,
+            pageTitle: 'Ваши товары',
+            path: '/products',
+            hasProducts: products.length > 0,
+            activeShop: true
+        });
+    });
 }
