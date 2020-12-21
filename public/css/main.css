@@ -106,8 +106,3 @@ main {
   background-color: #00695c;
   color: white;
 }
-
-span.error {
-  color: red;
-  font-weight: bold;
-}
